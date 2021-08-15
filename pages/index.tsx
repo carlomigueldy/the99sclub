@@ -3,8 +3,16 @@
 // import styles from '../styles/Home.module.css'
 
 import { Box, Button, Center, Image, Text } from "@chakra-ui/react";
+import { MutableRefObject, useRef } from "react";
 
 export default function Home() {
+  const homeRef = useRef(null);
+  const pinkRef = useRef(null);
+  const redRef = useRef(null);
+
+  const executeScroll = (ref: MutableRefObject<any>) =>
+    ref.current?.scrollIntoView();
+
   return (
     <>
       <Box
@@ -13,7 +21,7 @@ export default function Home() {
         width="100%"
         // backgroundColor="white"
         // blur="100px"
-        backdropFilter="blur(10px)"
+        backdropFilter="blur(5px)"
         // backgroundColor="#FAE9FB"
         // boxShadow="sm"
         display="flex"
@@ -32,9 +40,27 @@ export default function Home() {
           justifyContent="space-around"
           alignItems="center"
         >
-          <Text color="#B256B8">Products</Text>
-          <Text color="#B256B8">Feedback</Text>
-          <Text color="#B256B8">About Us</Text>
+          <Text
+            color="#B256B8"
+            cursor="pointer"
+            onClick={() => executeScroll(homeRef)}
+          >
+            Home
+          </Text>
+          <Text
+            color="#B256B8"
+            cursor="pointer"
+            onClick={() => executeScroll(pinkRef)}
+          >
+            Feedback
+          </Text>
+          <Text
+            color="#B256B8"
+            cursor="pointer"
+            onClick={() => executeScroll(redRef)}
+          >
+            About Us
+          </Text>
           <Button
             backgroundColor="#B256B8"
             width="110px"
@@ -42,6 +68,7 @@ export default function Home() {
             borderRadius="15px"
             fontWeight="normal"
             height="45px"
+            onClick={() => executeScroll(redRef)}
           >
             Store
           </Button>
@@ -49,6 +76,8 @@ export default function Home() {
       </Box>
 
       <Box
+        id="home"
+        ref={homeRef}
         height="100vh"
         display="flex"
         justifyContent="space-between"
@@ -106,7 +135,13 @@ export default function Home() {
         </Box>
       </Box>
 
-      <Box height="100vh" backgroundColor="pink"></Box>
+      <Box ref={pinkRef} id="pink" height="100vh" backgroundColor="#FAE9FB">
+        Feedback
+      </Box>
+
+      <Box ref={redRef} id="red" height="100vh" backgroundColor="#FAE9FB">
+        About Us
+      </Box>
     </>
   );
 }

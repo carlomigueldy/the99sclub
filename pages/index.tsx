@@ -8,11 +8,14 @@ export default function Home() {
   return (
     <>
       <Box
-        height="100px"
+        height="80px"
         position="fixed"
         width="100%"
-        backgroundColor="#FAE9FB"
-        // boxShadow="md"
+        // backgroundColor="white"
+        // blur="100px"
+        backdropFilter="blur(10px)"
+        // backgroundColor="#FAE9FB"
+        // boxShadow="sm"
         display="flex"
         justifyContent="space-between"
         alignItems="center"

@@ -54,18 +54,20 @@ export default function Products() {
             <Box
               display="flex"
               justifyContent="center"
-              alignItems="center"
+              alignItems="start"
               flexDirection={index % 2 == 0 ? "row-reverse" : "row"}
               padding={[0, 10, 0, 10]}
             >
               <Image
                 src={product.image}
-                height="350px"
-                width="350px"
+                height={350}
+                width={350}
                 borderRadius="5px"
               />
               <Box padding={[0, 10, 0, 10]}>
-                <Text fontWeight="bold" fontSize="24px">{product.name}</Text>
+                <Text fontWeight="bold" fontSize="24px">
+                  {product.name}
+                </Text>
                 <Text marginTop={15} marginBottom={15}>
                   {product.price}
                 </Text>

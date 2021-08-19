@@ -5,7 +5,7 @@ import "@fontsource/sora";
 
 const theme = extendTheme({
   colors: {
-    primary: "#FAE9FB",
+    primary: "#B256B8",
     backgroundColor: "#F8F4F9",
   },
   fonts: {

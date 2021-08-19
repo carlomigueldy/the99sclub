@@ -1,83 +1,14 @@
-// import Head from 'next/head'
-// import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
-
 import { Box, Button, Center, Image, Text } from "@chakra-ui/react";
-import { MutableRefObject, useRef } from "react";
+import { Footer } from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
-  const homeRef = useRef(null);
-  const pinkRef = useRef(null);
-  const redRef = useRef(null);
-
-  const executeScroll = (ref: MutableRefObject<any>) =>
-    ref.current?.scrollIntoView();
-
   return (
     <>
-      <Box
-        height="80px"
-        position="fixed"
-        width="100%"
-        // backgroundColor="white"
-        // blur="100px"
-        backdropFilter="blur(5px)"
-        // backgroundColor="#FAE9FB"
-        // boxShadow="sm"
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
-        zIndex="10"
-        // padding={[0, 5, 0, 5]}
-        padding="25px"
-        // bgGradient="linear(to-b, #FAE9FB, #FAFAFA)"
-      >
-        <Image src="/logo.png" height="60px" width="60px" alt="Business Logo" />
-
-        <Box
-          display="flex"
-          width="500px"
-          justifyContent="space-around"
-          alignItems="center"
-        >
-          <Text
-            color="#B256B8"
-            cursor="pointer"
-            onClick={() => executeScroll(homeRef)}
-          >
-            Home
-          </Text>
-          <Text
-            color="#B256B8"
-            cursor="pointer"
-            onClick={() => executeScroll(pinkRef)}
-          >
-            Feedback
-          </Text>
-          <Text
-            color="#B256B8"
-            cursor="pointer"
-            onClick={() => executeScroll(redRef)}
-          >
-            About Us
-          </Text>
-          <Button
-            backgroundColor="#B256B8"
-            width="110px"
-            color="white"
-            borderRadius="15px"
-            fontWeight="normal"
-            height="45px"
-            onClick={() => executeScroll(redRef)}
-          >
-            Store
-          </Button>
-        </Box>
-      </Box>
+      <Navbar />
 
       <Box
         id="home"
-        ref={homeRef}
         height="100vh"
         display="flex"
         justifyContent="space-between"
@@ -108,9 +39,12 @@ export default function Home() {
                 borderRadius="15px"
                 minWidth="220px"
                 height="60px"
-                backgroundColor="#B256B8"
+                backgroundColor="primary"
                 color="white"
                 boxShadow="md"
+                onClick={() => {
+                  window.open("https://shopee.ph/the99sclub", "_blank");
+                }}
               >
                 Shop Now
               </Button>
@@ -126,7 +60,7 @@ export default function Home() {
           // backgroundColor="blue"
         >
           <Image
-            src="/images/image_1.png"
+            src="/images/landing.png"
             height="450px"
             width="450px"
             borderRadius="15px"
@@ -135,13 +69,7 @@ export default function Home() {
         </Box>
       </Box>
 
-      <Box ref={pinkRef} id="pink" height="100vh" backgroundColor="#FAE9FB">
-        Feedback
-      </Box>
-
-      <Box ref={redRef} id="red" height="100vh" backgroundColor="#FAE9FB">
-        About Us
-      </Box>
+      <Footer />
     </>
   );
 }

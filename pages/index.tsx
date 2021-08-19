@@ -64,7 +64,7 @@ export default function Home() {
             height="450px"
             width="450px"
             borderRadius="15px"
-            alt="Business Logo"
+            alt="Featured Babe Product"
           />
         </Box>
       </Box>

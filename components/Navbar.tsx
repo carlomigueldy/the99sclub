@@ -39,9 +39,9 @@ export default function Navbar() {
         <Link
           color="primary"
           cursor="pointer"
-          onClick={() => router.replace("/")}
+          onClick={() => router.replace("/products")}
         >
-          Home
+          Products
         </Link>
         <Link
           color="primary"

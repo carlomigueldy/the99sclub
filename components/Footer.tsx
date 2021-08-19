@@ -13,11 +13,11 @@ export function Footer() {
       backgroundColor="#DEB9F2"
     >
       <Box>
-        <Text fontSize="24px" fontWeight="bold">
+        <Text fontSize="24px" align="center" fontWeight="bold">
           SIGN UP FOR OUR NEWSLETTER
         </Text>
         <Box height="25px" />
-        <Text fontSize="18px">
+        <Text align="center" fontSize="18px">
           Sign up to get the latest on sales, new releases, and more...
         </Text>
         <Box height="25px" />

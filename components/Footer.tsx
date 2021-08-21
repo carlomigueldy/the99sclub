@@ -12,15 +12,22 @@ export function Footer() {
       height="50vh"
       backgroundColor="#DEB9F2"
     >
-      <Box>
+      <Box
+        padding={{
+          sm: 10,
+          md: 10,
+          lg: 10,
+          xl: 10,
+        }}
+      >
         <Text fontSize="24px" align="center" fontWeight="bold">
           SIGN UP FOR OUR NEWSLETTER
         </Text>
-        <Box height="25px" />
+        <Box height={25} />
         <Text align="center" fontSize="18px">
           Sign up to get the latest on sales, new releases, and more...
         </Text>
-        <Box height="25px" />
+        <Box height={25} />
         <Input
           placeholder="Write your e-email"
           backgroundColor="white"
@@ -28,7 +35,7 @@ export function Footer() {
           borderColor="#B256B8"
           borderRadius="50px"
         />
-        <Box height="25px" />
+        <Box height={25} />
         <Box display="flex" justifyContent="center" alignItems="center">
           <Link onClick={() => router.push("products")}>Products</Link>
           <Text marginStart="5px" marginEnd="5px">
@@ -40,7 +47,7 @@ export function Footer() {
           </Text>
           <Link onClick={() => router.push("about-us")}>About Us</Link>
         </Box>
-        <Box height="25px" />
+        <Box height={25} />
         <Box display="flex" justifyContent="space-around">
           <Avatar
             src="/images/shopee.png"

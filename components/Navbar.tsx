@@ -19,8 +19,6 @@ import { useRouter } from "next/dist/client/router";
 import React from "react";
 import { useBreakpoints } from "../theme/utils";
 
-
-
 export default function Navbar() {
   const router = useRouter();
 
@@ -60,7 +58,14 @@ export default function Navbar() {
             ref={drawerButtonRef}
             onClick={onOpen}
             aria-label="Hamburger Icon"
+            backgroundColor="transparent"
+            color="black"
+            _hover={{
+              backgroundColor: "transparent",
+            }}
+            _active={{ backgroundColor: "transparent" }}
             icon={<HamburgerIcon />}
+            // size={48}
           />
         )}
       </Box>

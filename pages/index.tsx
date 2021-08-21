@@ -28,6 +28,22 @@ export default function Home() {
         alignItems="center"
       >
         <SimpleGrid
+          marginTop={{
+            sm: 10,
+          }}
+          marginBottom={{
+            sm: 10,
+          }}
+          paddingStart={{
+            xl: 100,
+            md: 50,
+            lg: 50,
+          }}
+          paddingEnd={{
+            xl: 100,
+            md: 50,
+            lg: 50,
+          }}
           columns={{
             sm: 1,
             md: 2,
@@ -44,7 +60,7 @@ export default function Home() {
             alignItems="center"
           >
             <Box>
-              <Text fontSize={{ base: "48px" }}>
+              <Text fontSize={{ base: "48px", sm: 32, xl: 48, md: 32 }}>
                 Perfect for your hair, lovely on your shelves
               </Text>
               <Text>
@@ -86,10 +102,11 @@ export default function Home() {
             // backgroundColor="blue"
           >
             <Image
+              marginTop={{sm:50}}
               src="/images/landing.png"
-              height="450px"
-              width="450px"
-              borderRadius="15px"
+              height="100%"
+              width="800px"
+              borderRadius={15}
               alt="Featured Babe Product"
             />
           </Box>

@@ -30,28 +30,35 @@ export default function Home() {
         <SimpleGrid
           spacing={10}
           marginTop={{
+            base: 20,
             sm: 10,
             md: 0,
             lg: 0,
             xl: 0,
           }}
           marginBottom={{
+            base: 20,
             sm: 10,
             md: 0,
             lg: 0,
             xl: 0,
           }}
           paddingStart={{
+            base: 10,
+            sm: 10,
             xl: 100,
             md: 50,
             lg: 50,
           }}
           paddingEnd={{
+            base: 10,
+            sm: 10,
             xl: 100,
             md: 50,
             lg: 50,
           }}
           columns={{
+            base: 1,
             sm: 1,
             md: 2,
             lg: 2,
@@ -67,7 +74,7 @@ export default function Home() {
             alignItems="center"
           >
             <Box>
-              <Text fontSize={{ sm: 32, xl: 48, md: 40 }}>
+              <Text fontSize={{ base: 32, sm: 32, xl: 48, md: 40, lg: 40 }}>
                 Perfect for your hair, lovely on your shelves
               </Text>
               <Text>
@@ -76,6 +83,7 @@ export default function Home() {
               </Text>
               <Box
                 height={{
+                  base: 50,
                   sm: 50,
                   md: 100,
                   lg: 100,
@@ -106,7 +114,6 @@ export default function Home() {
             display="flex"
             justifyContent="center"
             alignItems="center"
-            backgroundColor="blue"
           >
             <Image
               src="/images/landing.png"

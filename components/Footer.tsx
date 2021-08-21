@@ -9,18 +9,15 @@ export function Footer() {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      height="50vh"
+      minHeight="50vh"
       backgroundColor="#DEB9F2"
     >
-      <Box
-        padding={{
-          sm: 10,
-          md: 10,
-          lg: 10,
-          xl: 10,
-        }}
-      >
-        <Text fontSize="24px" align="center" fontWeight="bold">
+      <Box padding={10}>
+        <Text
+          fontSize={{ base: 20, sm: 20, md: 24, lg: 24, xl: 24, "2xl": 24 }}
+          align="center"
+          fontWeight="bold"
+        >
           SIGN UP FOR OUR NEWSLETTER
         </Text>
         <Box height={25} />

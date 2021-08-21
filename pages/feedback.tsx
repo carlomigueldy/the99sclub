@@ -5,6 +5,7 @@ import {
   Grid,
   GridItem,
   Image,
+  SimpleGrid,
   Text,
 } from "@chakra-ui/react";
 import { Footer } from "../components/Footer";
@@ -59,17 +60,27 @@ export default function Feedback() {
         <Text align="center" fontWeight="bold" fontSize="32px">
           babe feedback
         </Text>
-        <Grid
+        <SimpleGrid
           marginTop={50}
           marginBottom={50}
-          templateColumns="repeat(2, 1fr)"
-          gap={6}
+          columns={{
+            base: 1,
+            sm: 1,
+            md: 2,
+            lg: 2,
+            xl: 2,
+            "2xl": 2,
+          }}
+          spacing={10}
+          // templateColumns="repeat(2, 1fr)"
+          // gap={6}
         >
           {FEEDBACKS.map((feedback, index) => {
             return (
               <Center key={index}>
                 <GridItem
                   minHeight={200}
+                  height="100%"
                   width={500}
                   borderRadius="10px"
                   boxShadow="md"
@@ -93,7 +104,7 @@ export default function Feedback() {
               </Center>
             );
           })}
-        </Grid>
+        </SimpleGrid>
       </Box>
 
       <Footer />

@@ -65,9 +65,9 @@ export default function Feedback() {
           templateColumns="repeat(2, 1fr)"
           gap={6}
         >
-          {FEEDBACKS.map((feedback) => {
+          {FEEDBACKS.map((feedback, index) => {
             return (
-              <Center>
+              <Center key={index}>
                 <GridItem
                   minHeight={200}
                   width={500}

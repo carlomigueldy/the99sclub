@@ -52,6 +52,7 @@ export default function Products() {
         {PRODUCTS.map((product, index) => {
           return (
             <Box
+              key={index}
               display="flex"
               justifyContent="center"
               alignItems="start"

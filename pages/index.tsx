@@ -9,7 +9,7 @@ export default function Home() {
 
       <Box
         id="home"
-        height="100vh"
+        minHeight="100vh"
         display="flex"
         justifyContent="space-between"
         backgroundColor="backgroundColor"

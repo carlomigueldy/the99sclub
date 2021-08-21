@@ -1,6 +1,7 @@
-import { Box, Button, Center, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Center, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import { Footer } from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { useBreakpoints } from "../theme/utils";
 
 type Product = {
   name: string;
@@ -34,6 +35,8 @@ const PRODUCTS: Product[] = [
 ];
 
 export default function Products() {
+  const breakpoints = useBreakpoints();
+
   return (
     <>
       <Navbar />
@@ -42,39 +45,98 @@ export default function Products() {
         id="products"
         minHeight="100vh"
         backgroundColor="#FAE9FB"
-        padding={[0, 10, 0, 10]}
+        padding={{
+          base: 10,
+          sm: 10,
+          md: 10,
+          lg: 25,
+          xl: 25,
+          "2xl": 50,
+        }}
       >
-        <Box height="50px" />
-        <Text fontWeight="bold" fontSize="32px">
+        <Box
+          height={{
+            base: 50,
+            sm: 50,
+            md: 50,
+            lg: 50,
+            xl: 50,
+            "2xl": 50,
+          }}
+        />
+
+        <Text fontWeight="bold" fontSize="4xl">
           Products
         </Text>
 
+        <Box
+          height={{
+            base: 50,
+            sm: 50,
+            md: 50,
+            lg: 50,
+            xl: 50,
+            "2xl": 50,
+          }}
+        />
+
         {PRODUCTS.map((product, index) => {
-          return (
-            <Box
-              key={index}
-              display="flex"
-              justifyContent="center"
-              alignItems="start"
-              flexDirection={index % 2 == 0 ? "row-reverse" : "row"}
-              padding={[0, 10, 0, 10]}
-            >
-              <Image
-                src={product.image}
-                height={350}
-                width={350}
-                borderRadius="5px"
-              />
-              <Box padding={[0, 10, 0, 10]}>
-                <Text fontWeight="bold" fontSize="24px">
-                  {product.name}
-                </Text>
-                <Text marginTop={15} marginBottom={15}>
-                  {product.price}
-                </Text>
-                <Text>{product.description}</Text>
-              </Box>
+          const ProductImage = () => (
+            <Image
+              src={product.image}
+              height="100%"
+              width={350}
+              borderRadius="5px"
+            />
+          );
+
+          const ProductDetail = () => (
+            <Box padding={[0, 10, 0, 10]}>
+              <Text fontWeight="bold" fontSize="24px">
+                {product.name}
+              </Text>
+              <Text marginTop={15} marginBottom={15}>
+                {product.price}
+              </Text>
+              <Text>{product.description}</Text>
             </Box>
+          );
+
+          if (breakpoints.sm || breakpoints.md) {
+            return (
+              <>
+                <SimpleGrid marginTop={5} marginBottom={5} columns={1}>
+                  <Center>
+                    <ProductImage />
+                  </Center>
+                  <ProductDetail />
+                </SimpleGrid>
+              </>
+            );
+          }
+
+          return (
+            <>
+              <Box
+                key={index}
+                columns={{
+                  base: 1,
+                  xs: 1,
+                  sm: 1,
+                  md: 2,
+                  lg: 2,
+                  xl: 2,
+                }}
+                display="flex"
+                justifyContent="center"
+                alignItems="start"
+                flexDirection={index % 2 == 0 ? "row-reverse" : "row"}
+                padding={[0, 10, 0, 10]}
+              >
+                <ProductImage />
+                <ProductDetail />
+              </Box>
+            </>
           );
         })}
       </Box>

@@ -28,11 +28,18 @@ export default function Home() {
         alignItems="center"
       >
         <SimpleGrid
+          spacing={10}
           marginTop={{
             sm: 10,
+            md: 0,
+            lg: 0,
+            xl: 0,
           }}
           marginBottom={{
             sm: 10,
+            md: 0,
+            lg: 0,
+            xl: 0,
           }}
           paddingStart={{
             xl: 100,
@@ -60,7 +67,7 @@ export default function Home() {
             alignItems="center"
           >
             <Box>
-              <Text fontSize={{ base: "48px", sm: 32, xl: 48, md: 32 }}>
+              <Text fontSize={{ sm: 32, xl: 48, md: 40 }}>
                 Perfect for your hair, lovely on your shelves
               </Text>
               <Text>
@@ -99,10 +106,9 @@ export default function Home() {
             display="flex"
             justifyContent="center"
             alignItems="center"
-            // backgroundColor="blue"
+            backgroundColor="blue"
           >
             <Image
-              marginTop={{sm:50}}
               src="/images/landing.png"
               height="100%"
               width="800px"

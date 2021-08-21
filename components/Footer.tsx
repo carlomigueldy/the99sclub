@@ -14,14 +14,14 @@ export function Footer() {
     >
       <Box padding={10}>
         <Text
-          fontSize={{ base: 20, sm: 20, md: 24, lg: 24, xl: 24, "2xl": 24 }}
+          fontSize={{ base: 18, sm: 18, md: 24, lg: 24, xl: 24, "2xl": 24 }}
           align="center"
           fontWeight="bold"
         >
           SIGN UP FOR OUR NEWSLETTER
         </Text>
         <Box height={25} />
-        <Text align="center" fontSize="18px">
+        <Text align="center" fontSize={16}>
           Sign up to get the latest on sales, new releases, and more...
         </Text>
         <Box height={25} />

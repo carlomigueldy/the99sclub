@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
+import Head from "next/head";
 import "@fontsource/sora";
 
 const theme = extendTheme({
@@ -10,8 +11,8 @@ const theme = extendTheme({
     backgroundColor: "#F8F4F9",
   },
   fonts: {
-    heading: "Sora",
-    body: "Sora",
+    heading: "Montserrat",
+    body: "Montserrat",
   },
 });
 
@@ -25,9 +26,14 @@ const breakpoints = createBreakpoints({
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <>
+      <ChakraProvider theme={theme}>
+        <Head>
+          <title>the99sclub</title>
+        </Head>
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </>
   );
 }
 export default MyApp;

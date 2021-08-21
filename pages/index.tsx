@@ -74,7 +74,10 @@ export default function Home() {
             alignItems="center"
           >
             <Box>
-              <Text fontSize={{ base: 32, sm: 32, xl: 48, md: 40, lg: 40 }}>
+              <Text
+                fontWeight="bold"
+                fontSize={{ base: 32, sm: 32, xl: 48, md: 40, lg: 40 }}
+              >
                 Perfect for your hair, lovely on your shelves
               </Text>
               <Text>

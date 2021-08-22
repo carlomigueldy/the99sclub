@@ -2,6 +2,7 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
+  Center,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -13,6 +14,7 @@ import {
   Image,
   Input,
   Link,
+  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useRouter } from "next/dist/client/router";
@@ -78,20 +80,70 @@ export default function Navbar() {
         finalFocusRef={drawerButtonRef}
       >
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent backgroundColor="#FAE9FB">
           <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
+          <DrawerHeader>
+            <Center>
+              <Image src="/logo.png" height={50} width={50} />
+            </Center>
+          </DrawerHeader>
 
           <DrawerBody>
-            <Input placeholder="Type here..." />
+            <Box
+              display="flex"
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              marginTop={100}
+              marginBottom={100}
+            >
+              <Link
+                margin={[0, 5, 0, 5]}
+                fontWeight="bold"
+                borderBottom={router.route == "/" ? "3px #B256B8 solid" : ""}
+                onClick={() => router.push("/")}
+              >
+                Home
+              </Link>
+              <Link
+                margin={[0, 5, 0, 5]}
+                fontWeight="bold"
+                borderBottom={
+                  router.route == "/about-us" ? "3px #B256B8 solid" : ""
+                }
+                onClick={() => router.push("about-us")}
+              >
+                About
+              </Link>
+              <Link
+                margin={[0, 5, 0, 5]}
+                fontWeight="bold"
+                borderBottom={
+                  router.route == "/products" ? "3px #B256B8 solid" : ""
+                }
+                onClick={() => router.push("products")}
+              >
+                Products
+              </Link>
+              <Link
+                margin={[0, 5, 0, 5]}
+                fontWeight="bold"
+                borderBottom={
+                  router.route == "/feedback" ? "3px #B256B8 solid" : ""
+                }
+                onClick={() => router.push("feedback")}
+              >
+                Feedback
+              </Link>
+            </Box>
           </DrawerBody>
 
-          <DrawerFooter>
+          {/* <DrawerFooter>
             <Button variant="outline" mr={3} onClick={onClose}>
               Cancel
             </Button>
             <Button colorScheme="blue">Save</Button>
-          </DrawerFooter>
+          </DrawerFooter> */}
         </DrawerContent>
       </Drawer>
     </>
